@@ -40,6 +40,7 @@ class Pusher(PusherAPI):
             "app_id": settings.PUSHER_APP_ID,
             "key": settings.PUSHER_KEY,
             "secret": settings.PUSHER_SECRET,
+            "encoder": getattr(settings, 'PUSHER_ENCODER', None)
         }
         kw.update(kwargs)
 
