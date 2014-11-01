@@ -92,6 +92,7 @@ class Pusher(PusherAPI):
                 return self._registry[namespaces[0]](request, channel)
         elif len(namespaces) > 1:
             raise NamespaceClash("The channel %s matches the namespace for [%s]" % (channel, ",".join(namespaces)))
-        return False
+        return True
+        # return False
 
 pusher = Pusher()
